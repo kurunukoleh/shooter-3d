@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://0686j0efd4h1"]
+[gd_scene load_steps=7 format=3 uid="uid://0686j0efd4h1"]
 
-[ext_resource type="PackedScene" uid="uid://jgno6d0f0hnd" path="res://oject.glb" id="1_l2mhl"]
+[ext_resource type="PackedScene" uid="uid://d4fjndooapu0m" path="res://untitled.glb" id="1_tgvex"]
+[ext_resource type="PackedScene" uid="uid://dt53fyre77aj1" path="res://sharic.glb" id="2_cr4hy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3mgls"]
 size = Vector3(10, 0.5, 10)
@@ -8,7 +9,12 @@ size = Vector3(10, 0.5, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_47hk0"]
 size = Vector3(3, 0.5, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yyqwd"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8haki"]
+height = 23.495
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_in03x"]
+radius = 1.0
 
 [node name="Node3D" type="Node3D"]
 
@@ -22,11 +28,18 @@ mesh = SubResource("BoxMesh_3mgls")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269254, 0, 0)
 shape = SubResource("BoxShape3D_47hk0")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.769565, 0)
+[node name="untitled" parent="." instance=ExtResource("1_tgvex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7249, 9.32821, -1.23463)
 
-[node name="oject" parent="CharacterBody3D" instance=ExtResource("1_l2mhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0489969, 0.518732, 0.163857)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="untitled"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20237, -1.7777, 1.17797)
+shape = SubResource("CylinderShape3D_8haki")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/oject"]
-shape = SubResource("BoxShape3D_yyqwd")
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02917, 2.06652, 0.265883)
+shape = SubResource("SphereShape3D_in03x")
+
+[node name="sharic" parent="StaticBody3D2" instance=ExtResource("2_cr4hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01019, 1.94087, 0.249899)
