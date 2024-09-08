@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://0686j0efd4h1"]
+[gd_scene load_steps=8 format=3 uid="uid://0686j0efd4h1"]
 
 [ext_resource type="PackedScene" uid="uid://d4fjndooapu0m" path="res://untitled.glb" id="1_tgvex"]
 [ext_resource type="PackedScene" uid="uid://dt53fyre77aj1" path="res://sharic.glb" id="2_cr4hy"]
+[ext_resource type="PackedScene" uid="uid://pxgm5na6ht13" path="res://homekopatich.tscn" id="3_vxjwi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3mgls"]
-size = Vector3(10, 0.5, 10)
+size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47hk0"]
 size = Vector3(3, 0.5, 3)
@@ -43,3 +44,27 @@ shape = SubResource("SphereShape3D_in03x")
 
 [node name="sharic" parent="StaticBody3D2" instance=ExtResource("2_cr4hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01019, 1.94087, 0.249899)
+
+[node name="homekopatich" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3728, 2.25126, 17.4768)
+
+[node name="homekopatich2" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 18, 2, 10)
+
+[node name="homekopatich3" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 18)
+
+[node name="homekopatich4" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -18, 2, 4)
+
+[node name="homekopatich5" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -16)
+
+[node name="homekopatich6" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -16)
+
+[node name="homekopatich7" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19, 2, -12)
+
+[node name="homekopatich8" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 2, -15)
