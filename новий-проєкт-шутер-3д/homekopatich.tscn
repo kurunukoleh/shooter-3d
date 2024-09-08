@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://pxgm5na6ht13"]
+
+[ext_resource type="PackedScene" uid="uid://dwakrdxmj1n6u" path="res://podvalkopatycha.glb" id="1_0qqd5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5tos"]
+margin = 0.0
+size = Vector3(7, 7, 7)
+
+[node name="homekopatich" type="StaticBody3D"]
+
+[node name="podvalkopatycha" parent="." instance=ExtResource("1_0qqd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84623, 0.302822, -0.00934768)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.733195, 1.92539, -0.91713)
+shape = SubResource("BoxShape3D_l5tos")
