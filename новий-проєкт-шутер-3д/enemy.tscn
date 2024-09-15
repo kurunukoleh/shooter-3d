@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdp5uhmcw6fec"]
+
+[ext_resource type="PackedScene" uid="uid://u8wqdcrw3ua3" path="res://enemy.glb" id="1_h8a6p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkjkf"]
+size = Vector3(6, 6, 4)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_h8a6p")]
+transform = Transform3D(-0.9999, 0.0141541, 0, -0.0141541, -0.9999, 0, 0, 0, 1, 0, -1.55083, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0446556, 0.785026, -0.948686)
+shape = SubResource("BoxShape3D_rkjkf")
