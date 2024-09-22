@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://0686j0efd4h1"]
 
 [ext_resource type="PackedScene" uid="uid://d4fjndooapu0m" path="res://untitled.glb" id="1_tgvex"]
-[ext_resource type="PackedScene" uid="uid://dt53fyre77aj1" path="res://sharic.glb" id="2_cr4hy"]
 [ext_resource type="PackedScene" uid="uid://pxgm5na6ht13" path="res://homekopatich.tscn" id="3_vxjwi"]
 [ext_resource type="PackedScene" uid="uid://bdp5uhmcw6fec" path="res://enemy.tscn" id="4_5sm71"]
 [ext_resource type="Script" path="res://character_body_3d_2.gd" id="5_qeqyc"]
 [ext_resource type="Script" path="res://enemy.gd" id="5_xf4jg"]
+[ext_resource type="PackedScene" uid="uid://c5usr2bypgafe" path="res://personazanim2.glb" id="6_73315"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ragr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -49,7 +49,7 @@ transparency = 0.03
 mesh = SubResource("BoxMesh_3mgls")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278512, 0.275009, 3.77142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278512, 0.317919, -0.874904)
 shape = SubResource("BoxShape3D_47hk0")
 
 [node name="untitled" parent="." instance=ExtResource("1_tgvex")]
@@ -91,14 +91,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61156, 4, 9.36404)
 script = ExtResource("5_xf4jg")
 
 [node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72437, 2.81865, 3.56343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72437, 6.11148, 3.56343)
 script = ExtResource("5_qeqyc")
 
-[node name="sharic" parent="CharacterBody3D2" instance=ExtResource("2_cr4hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01019, 3.51792, 0.249899)
-
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.05772, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981226, 3.5306, 0.265883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981226, 3.51294, 0.265883)
 shape = SubResource("SphereShape3D_in03x")
+
+[node name="personazanim2" parent="CharacterBody3D2" instance=ExtResource("6_73315")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.714072, 3.69344, 0)
