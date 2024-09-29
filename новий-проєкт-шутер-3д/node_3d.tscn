@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bdp5uhmcw6fec" path="res://enemy.tscn" id="4_5sm71"]
 [ext_resource type="Script" path="res://character_body_3d_2.gd" id="5_qeqyc"]
 [ext_resource type="Script" path="res://enemy.gd" id="5_xf4jg"]
-[ext_resource type="PackedScene" uid="uid://c5usr2bypgafe" path="res://personazanim2.glb" id="6_73315"]
+[ext_resource type="PackedScene" uid="uid://dy2p6iutb61jy" path="res://personazpistolgodot.glb" id="6_savwp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ragr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -101,5 +101,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.05772, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981226, 3.51294, 0.265883)
 shape = SubResource("SphereShape3D_in03x")
 
-[node name="personazanim2" parent="CharacterBody3D2" instance=ExtResource("6_73315")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.714072, 3.69344, 0)
+[node name="personazpistolgodot" parent="CharacterBody3D2" instance=ExtResource("6_savwp")]
+
+[node name="Skeleton3D" parent="CharacterBody3D2/personazpistolgodot/Арматура_001" index="1"]
+bones/1/position = Vector3(-0.00341202, 0.96944, -0.767144)
+bones/1/rotation = Quaternion(0.650613, -0.293491, -0.45233, -0.534755)
+bones/2/rotation = Quaternion(0.970932, 1.50597e-08, 1.18254e-07, 0.239356)
+bones/3/position = Vector3(-0.791117, 0.372961, -0.99327)
+
+[node name="Cube_001" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="0"]
+transform = Transform3D(-0.0903759, -2.23517e-08, -0.0013646, -8.84969e-09, 0.194608, -4.70219e-11, 0.00334175, 4.07578e-10, -0.0369049, -1.07716, 0.142495, -1.02406)
+
+[node name="Cube_002" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="1"]
+transform = Transform3D(0.313374, -8.61473e-09, -0.00276465, 3.01817e-08, 0.0732421, -2.57435e-10, -0.0115874, -1.19455e-10, -0.0747685, -1.31092, 0.358408, -1.01126)
+
+[node name="Cube_003" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="2"]
+transform = Transform3D(-0.02365, -0.104381, -0.000827217, -0.0187822, 0.131613, 3.83649e-11, 0.000874485, 0.00385962, -0.0223716, -1.23255, 0.200661, -1.01832)
+
+[node name="Cylinder" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="3"]
+transform = Transform3D(-0.000212201, 0.138728, -0.00150195, 0.0406527, 0.000725129, 4.83835e-11, 7.84644e-06, -0.00512961, -0.0406196, -1.69233, 0.368925, -1.00132)
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D2"]
+transform = Transform3D(0.00851849, 0.999922, 0.00910927, -0.997717, 0.00910932, -0.0669095, -0.0669873, -0.00851855, 0.997718, -1, 0, -1)
+
+[editable path="CharacterBody3D2/personazpistolgodot"]

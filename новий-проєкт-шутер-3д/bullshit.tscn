@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7qb3xj02iuw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4jacs"]
+radius = 0.02
+height = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rd5ab"]
+radius = 0.02
+height = 0.1
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000108466, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.0514819, 0.998674, 0, -0.998674, -0.0514819, 0, 0, 0, 1, 0.00106847, 0.00151522, 0)
+shape = SubResource("CapsuleShape3D_4jacs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00876148, 0.999962, 0, -0.999962, -0.00876148, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_rd5ab")
