@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var anima_player =$personazpistolgodot/AnimationPlayer
 
-@onready var bullet_gun = load("res://bullet.tscn")
+@onready var bullet_gun = load("res://bullshit.tscn")
 @onready var ray = $RayCast3D
 
 var GUN = false
@@ -39,13 +39,13 @@ func _physics_process(delta):
 
 
 func _input(event):
-	if Input.is_action_just_pressed("Арматура_001Action"):
+	if Input.is_action_just_pressed("getgun"):
 		anima_player.play("Арматура_001Action")
 		GUN = true
 		
 	if Input.is_action_just_pressed("shoot") and GUN == true:
 		var inst = bullet_gun.instantiate()
 		inst.position = ray.global_position
-		#inst.transform.basis = ray.global_transform.basis
+		inst.transform.basis = ray.global_transform.basis
 		get_tree().get_root().add_child(inst)
 	

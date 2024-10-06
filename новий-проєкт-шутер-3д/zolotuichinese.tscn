@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt68yfm6xwdfs"]
+
+[ext_resource type="PackedScene" uid="uid://d1cviiqq603o3" path="res://statue-chiriqui-3d-model/scene.gltf" id="1_0no7r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8gxr"]
+size = Vector3(2, 5, 2)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="OSG_Scene" parent="." instance=ExtResource("1_0no7r")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.620094, 4.43399, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.664831, 4.00183, 0.213023)
+shape = SubResource("BoxShape3D_k8gxr")
