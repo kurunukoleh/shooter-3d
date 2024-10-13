@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0depppjy5oiq"]
+
+[ext_resource type="PackedScene" uid="uid://dh44t3d1i8jxa" path="res://derovo.glb" id="1_b6dv4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r8ndd"]
+height = 20.0
+radius = 1.0
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="derovo" parent="." instance=ExtResource("1_b6dv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97317, 0, -3.52591)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98926, -1.08023, -3.59522)
+shape = SubResource("CylinderShape3D_r8ndd")

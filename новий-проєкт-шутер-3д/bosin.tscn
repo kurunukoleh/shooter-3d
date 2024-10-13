@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ob20nsqa2w2"]
+
+[ext_resource type="PackedScene" uid="uid://cptlg146c8t8d" path="res://bosin.glb" id="1_qy50d"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eqfh4"]
+height = 1.0
+radius = 2.0
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="bosin" parent="." instance=ExtResource("1_qy50d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190764, -1.19209e-07, -0.506939)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.460291)
+shape = SubResource("CylinderShape3D_eqfh4")

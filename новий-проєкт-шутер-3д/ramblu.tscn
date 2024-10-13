@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://40k66ysdkt0g"]
+
+[ext_resource type="PackedScene" uid="uid://dlbbhvkxng2t0" path="res://ramblu.glb" id="1_6sm14"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01x4w"]
+size = Vector3(3, 2, 6)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_01x4w")
+
+[node name="ramblu" parent="." instance=ExtResource("1_6sm14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206854, -0.0151489, 0.979549)

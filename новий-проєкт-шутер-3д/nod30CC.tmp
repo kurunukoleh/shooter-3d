@@ -1,0 +1,134 @@
+[gd_scene load_steps=15 format=3 uid="uid://0686j0efd4h1"]
+
+[ext_resource type="PackedScene" uid="uid://d4fjndooapu0m" path="res://untitled.glb" id="1_tgvex"]
+[ext_resource type="PackedScene" uid="uid://pxgm5na6ht13" path="res://homekopatich.tscn" id="3_vxjwi"]
+[ext_resource type="PackedScene" uid="uid://bdp5uhmcw6fec" path="res://enemy.tscn" id="4_5sm71"]
+[ext_resource type="Script" path="res://character_body_3d_2.gd" id="5_qeqyc"]
+[ext_resource type="PackedScene" uid="uid://dy2p6iutb61jy" path="res://personazpistolgodot.glb" id="6_savwp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ragr"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_42iji"]
+sky_material = SubResource("ProceduralSkyMaterial_4ragr")
+
+[sub_resource type="Environment" id="Environment_oj2xp"]
+background_mode = 2
+sky = SubResource("Sky_42iji")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eq885"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3mgls"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87oh4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47hk0"]
+size = Vector3(51.5505, 0.5, 51.8827)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8haki"]
+height = 23.495
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_in03x"]
+radius = 1.0
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oj2xp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.461508, 0, -0.269212)
+material_override = SubResource("StandardMaterial3D_eq885")
+transparency = 0.03
+mesh = SubResource("BoxMesh_3mgls")
+surface_material_override/0 = SubResource("StandardMaterial3D_87oh4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278512, 0.317919, -0.874904)
+shape = SubResource("BoxShape3D_47hk0")
+
+[node name="untitled" parent="." instance=ExtResource("1_tgvex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7249, 9.32821, -1.23463)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="untitled"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20237, -1.7777, 1.17797)
+shape = SubResource("CylinderShape3D_8haki")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24769, 0)
+
+[node name="homekopatich" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9298, 2.25126, 17.4768)
+
+[node name="homekopatich2" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 18, 2, 30.3643)
+
+[node name="homekopatich3" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2858, 2, 27.495)
+
+[node name="homekopatich4" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -24.409, 2, -0.648587)
+
+[node name="homekopatich5" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -27.6532)
+
+[node name="homekopatich6" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -27.6975)
+
+[node name="homekopatich7" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 31.6888, 2, -28.814)
+
+[node name="homekopatich8" parent="." instance=ExtResource("3_vxjwi")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -35.3148, 2, -15)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("4_5sm71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61156, 4, 9.36404)
+
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0.00101224, 0, 1, 0, -0.00101224, 0, 1, 3.72437, 6.11148, 3.56343)
+script = ExtResource("5_qeqyc")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D2"]
+transform = Transform3D(0.993998, -0.00504206, 0.109281, -0.0300795, 0.947839, 0.317329, -0.105181, -0.318711, 0.941998, -0.877033, 4.05772, 4.40463)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815339, -0.140043, 0.265883)
+shape = SubResource("SphereShape3D_in03x")
+
+[node name="personazpistolgodot" parent="CharacterBody3D2" instance=ExtResource("6_savwp")]
+transform = Transform3D(0.0127406, 0, -0.999919, 0, 1, 0, 0.999919, 0, 0.0127406, 0, 0, 0)
+
+[node name="Skeleton3D" parent="CharacterBody3D2/personazpistolgodot/Арматура_001" index="1"]
+bones/1/position = Vector3(-0.00341202, 0.96944, -0.767144)
+bones/1/rotation = Quaternion(0.699559, 0.141605, -0.679451, -0.170036)
+bones/2/rotation = Quaternion(0.970932, 1.50597e-08, 1.18254e-07, 0.239356)
+bones/3/position = Vector3(0.0244067, 0.372961, -1.29777)
+
+[node name="Cube_001" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="0"]
+transform = Transform3D(-0.0903759, -2.23517e-08, -0.0013646, -8.84969e-09, 0.194608, -4.70219e-11, 0.00334175, 4.07578e-10, -0.0369049, -0.261635, 0.142495, -1.32856)
+
+[node name="Cube_002" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="1"]
+transform = Transform3D(0.313374, -8.61473e-09, -0.00276465, 3.01817e-08, 0.0732421, -2.57435e-10, -0.0115874, -1.19455e-10, -0.0747685, -0.495399, 0.358408, -1.31576)
+
+[node name="Cube_003" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="2"]
+transform = Transform3D(-0.02365, -0.104381, -0.000827217, -0.0187822, 0.131613, 3.83649e-11, 0.000874485, 0.00385962, -0.0223716, -0.417025, 0.200661, -1.32282)
+
+[node name="Cylinder" parent="CharacterBody3D2/personazpistolgodot/Арматура_001/Skeleton3D" index="3"]
+transform = Transform3D(-0.000212201, 0.138728, -0.00150195, 0.0406527, 0.000725129, 4.83835e-11, 7.84644e-06, -0.00512961, -0.0406196, -0.876808, 0.368925, -1.30582)
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D2"]
+transform = Transform3D(0.0664603, -0.0429357, -0.996865, -0.997717, 0.00910932, -0.0669095, 0.0119535, 0.999036, -0.0422324, 1.26907, -0.0981894, -1.14201)
+
+[editable path="CharacterBody3D2/personazpistolgodot"]

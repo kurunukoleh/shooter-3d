@@ -36,9 +36,25 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+var rot_y = 0.0
+var rot_x = 0.0
+var rot = 0.001
 
-
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 func _input(event):
+	
+	if event is  InputEventMouseMotion:
+		rot_y -= event.relative.x * rot
+		rot_x -= event.relative.y * rot
+		transform.basis = Basis(Vector3(0,1,0), rot_y)
+		
+	if Input.is_action_just_pressed("mouse_change"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
 	if Input.is_action_just_pressed("getgun"):
 		anima_player.play("Арматура_001Action")
 		GUN = true
